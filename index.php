@@ -32,7 +32,7 @@
                             <div><img src="./assets/Twitter.svg" alt="Twitter"></div>
                             <div><img src="./assets/Gihub.svg" alt="Gihub"></div>
                         </section>
-                        <p>Adready a member?  <a href="#">Login</a></p>
+                        <p>Adready a member?  <a href="./views/login.php">Login</a></p>
                     </div>
                 </form>
             </div>
@@ -40,8 +40,6 @@
         </section>
 
     </main>
-
-
 
     <h2>perfiles registrados</h2>
     <table>
@@ -70,9 +68,6 @@
                     $phone = $row["phone"];
                     $email  = $row["email"];
                     $pass = $row["pass"];
-
-
-
                     echo "
                     <tr>
                         <td>$id</td>

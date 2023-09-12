@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Editar porductos</h1>
+    <h1>Editar profile</h1>
 
     <?php
         $id = $_GET["id"];
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
-        $stmnt = $mysqli->query("SELECT *FROM productos WHERE id=$id");
+        $stmnt = $mysqli->query("SELECT * FROM profiles WHERE id=$id");
         $result = $stmnt->fetch_assoc();
 
     ?>
@@ -20,18 +20,33 @@
 
         <input type="text" hidden name="id" value="<?php echo $result['id']?>">
 
-        <label for="">Nombre:</label>
-        <input type="text" name="nombre" value="<?php echo $result['nombre']?>">
+        <label for="">Photo:</label>
+        <input type="text" name="photo" value="<?php echo $result['photo']?>">
 
         <br>
 
-        <label for="Precio">Precio:</label>
-        <input type="text" name ="precio" value="<?php echo $result['precio']?>">
+        <label for="">Name:</label>
+        <input type="text" name="nam" value="<?php echo $result['nam']?>">
 
         <br>
 
-        <label for="">Stock:</label>
-        <input type="number" name="stock" value="<?php echo $result['stock']?>">
+        <label for="">Bio:</label>
+        <input type="text" name="bio" value="<?php echo $result['bio']?>">
+
+        <br>
+
+        <label for="Precio">Phone:</label>
+        <input type="text" name ="phone" value="<?php echo $result['phone']?>">
+
+        <br>
+
+        <label for="">Email:</label>
+        <input type="email" name="email" value="<?php echo $result['email']?>">
+
+        <br>
+
+        <label for="">Password:</label>
+        <input type="password" name="pass" value="<?php echo $result['pass']?>">
 
         <br>
 

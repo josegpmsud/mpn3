@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    
+}
+.cont-login{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 24px;
+    border-color: #BDBDBD;
+    width: 473.83px;
+    height: 634.3px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;/*mientras por mejorar dieño*/
+}
+
+.link{
+    display: flex;
+}

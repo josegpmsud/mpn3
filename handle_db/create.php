@@ -1,19 +1,17 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
-    $nombre = $_POST["nombre"];
-    $precio = $_POST["precio"];
-    $stock = $_POST["stock"];
-
+    $email = $_POST["email"];
+    $pass = $_POST["pass"];
 
     require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
 
-    $resultado = $mysqli->query("INSERT INTO productos(nombre, precio, stock) VALUES ('$nombre','$precio','$stock')");
+    $resultado = $mysqli->query("INSERT INTO profiles(email, pass) VALUES ('$email','$pass')");
 
     if($resultado){
         header("Location: /index.php");
     }else{
-        "Error al guardar el producto";
+        "Error al guardar el perfil";
     }
 
 }else{

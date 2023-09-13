@@ -6,7 +6,7 @@
         $bio = $_POST["bio"];
         $phone = $_POST["phone"];
         $email = $_POST["email"];
-        $pass = $_POST["pass"];
+        $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
 
@@ -17,7 +17,6 @@
         }else{
             echo "Error al actualizar";
         }
-
     }
 
 ?>

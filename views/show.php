@@ -3,6 +3,14 @@
 <body>
     
     <?php
+        session_start();
+        if(isset($_SESSION['user'])){
+            echo "<p>Usuario: ". $_SESSION['user'] . "</p><br><br>";
+            echo "<a href='../handle_db/closesession.php'>Close Session</a>";
+        }else{
+            header("Location: /index.php");
+        }
+
         $email = $_GET["email"];
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
         $stmnt = $mysqli->query("SELECT * FROM profiles WHERE email='$email'");
@@ -61,7 +69,7 @@
                     <tr>
                         
                         <td>PASSWORD</td>
-                        <td>$pass</td>                        
+                        <td>***********</td>                        
                     </tr>
                    
 

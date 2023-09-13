@@ -6,14 +6,25 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
 
-    $resultado = $mysqli->query("INSERT INTO profiles(email, pass) VALUES ('$email','$pass')");
+    try{
+        $resultado = $mysqli->query("INSERT INTO profiles(email, pass) VALUES ('$email','$pass')");
 
-    if($resultado){
-        header("Location: /index.php");
-    }else{
-        "Error al guardar el perfil";
+        if($resultado){
+
+            header("Location: ../views/show.php?email=$email");//$id
+        }else{
+            "Error al guardar el perfil";
+        }
+
+    }catch(mysqli_sql_exception $e){
+        
+        if($mysqli->errno == 1062){
+            header("Location: /index.php");
+        }else{
+            echo "Error" . $e->getMessage();
+        }
     }
-
-}else{
-    echo "No estas usando POST para acceder a este archivo";
-}
+    
+    }else{
+        echo "No estas usando POST para acceder a este archivo";
+    }

@@ -13,7 +13,7 @@
         $result = $mysqli->query("UPDATE profiles SET photo='$photo', nam='$nam', bio='$bio', phone='$phone', email='$email',  pass='$pass' WHERE id=$id");
 
         if($result){
-            header("Location: /index.php");
+            header("Location: ../views/show.php?email=$email");
         }else{
             echo "Error al actualizar";
         }

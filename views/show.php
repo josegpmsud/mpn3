@@ -3,9 +3,9 @@
 <body>
     
     <?php
-        $id = $_GET["id"];
+        $email = $_GET["email"];
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
-        $stmnt = $mysqli->query("SELECT * FROM profiles WHERE id=$id");
+        $stmnt = $mysqli->query("SELECT * FROM profiles WHERE email='$email'");
         $result = $stmnt->fetch_assoc();
 
     ?>
@@ -20,7 +20,7 @@
             <?php
                 require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
 
-                $stmnt = $mysqli->query("SELECT * FROM profiles WHERE id=$id");
+                $stmnt = $mysqli->query("SELECT * FROM profiles WHERE email='$email'");
 
                 while($row = $stmnt->fetch_assoc()){
                     $id = $row["id"];

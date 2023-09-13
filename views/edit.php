@@ -20,37 +20,37 @@
 
     ?>
 
-    <form action="../handle_db/update.php" method="post">
+    <form action="../handle_db/update.php" method="post" enctype="multipart/form-data">
 
         <input type="text" hidden name="id" value="<?php echo $result['id']?>">
 
-        <label for="">Photo:</label>
-        <input type="text" name="photo" value="<?php echo $result['photo']?>">
+        <label for="photo">Photo:</label>
+        <input id="photo" type="file" name="photo" value="<?php // echo $result['photo']?>">
+        
+        <br>
+
+        <label for="nam">Name:</label>
+        <input id="nam" type="text" name="nam" value="<?php echo $result['nam']?>">
 
         <br>
 
-        <label for="">Name:</label>
-        <input type="text" name="nam" value="<?php echo $result['nam']?>">
+        <label for="bio">Bio:</label>
+        <input id="bio" type="text" name="bio" value="<?php echo $result['bio']?>">
 
         <br>
 
-        <label for="">Bio:</label>
-        <input type="text" name="bio" value="<?php echo $result['bio']?>">
+        <label for="phone">Phone:</label>
+        <input id="phone" type="text" name ="phone" value="<?php echo $result['phone']?>">
 
         <br>
 
-        <label for="Precio">Phone:</label>
-        <input type="text" name ="phone" value="<?php echo $result['phone']?>">
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" value="<?php echo $result['email']?>">
 
         <br>
 
-        <label for="">Email:</label>
-        <input type="email" name="email" value="<?php echo $result['email']?>">
-
-        <br>
-
-        <label for="">Password:</label>
-        <input type="password" name="pass" value="<?php echo $result['pass']?>">
+        <label for="pass">Password:</label>
+        <input id="pass" type="password" name="pass" value="<?php echo $result['pass']?>">
 
         <br>
 
@@ -61,3 +61,9 @@
 
 </body>
 </html>
+
+
+<?php
+
+
+?>

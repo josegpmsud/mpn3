@@ -1,7 +1,7 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST"){
         $id = $_POST["id"];
-        $photo = $_POST["photo"];
+        $photo = addslashes(file_get_contents($_FILES["photo"]["tmp_name"]));
         $nam = $_POST["nam"];
         $bio = $_POST["bio"];
         $phone = $_POST["phone"];
@@ -19,4 +19,5 @@
         }
     }
 
+    //$img_blog = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
 ?>

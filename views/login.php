@@ -18,7 +18,7 @@
                                     echo $_SESSION['duplicado'];
                                     unset($_SESSION['duplicado']);
                                 }
-                                    
+
                             ?>
                         </div>
                     </div>

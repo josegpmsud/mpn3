@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     if($stmnt->num_rows === 1){
         $result = $stmnt->fetch_assoc();
-        var_dump($result);
+        //var_dump($result);
         if(password_verify($pass, $result['pass'])){
             //var_dump($result['pass']);
             session_start();

@@ -38,6 +38,16 @@
                     $phone = $row["phone"];
                     $email  = $row["email"];
                     $pass = $row["pass"];
+
+                    
+                if(isset($row['photo'])){
+                    $dataImg = base64_encode($row['photo']);
+                    $image= "<img src='data:img/jpg;base64,$dataImg' height='100'/>";
+                }else{
+                    $image = "No tienes imagen";
+                }
+
+
                     echo "
                     <tr>
                     <td>
@@ -48,7 +58,7 @@
                     </tr>
                     <tr>
                         <td>PHOTO</td>
-                        <td>$photo</td>
+                        <td>$image</td>
                     </tr>
                     <tr>                        
                         <td>NAME</td>

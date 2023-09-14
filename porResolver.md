@@ -1,5 +1,6 @@
 # funcionalidades
 
+-corregir cuando los campos se actualizan no me cierre si no se a actualizado el correo
 -controlar error cuando no existe el perfil y se intenta entrar
 -como guardar y mostar fotografia
 -error al cargar una img y al editarla

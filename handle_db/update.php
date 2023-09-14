@@ -30,8 +30,14 @@
             $result = $mysqli->query("UPDATE profiles SET pass='$pass' WHERE id=$id");
         }
         
+        
         if($_POST['email'] != ""){
-            $email = $_POST["email"];           
+            $email = $_POST["email"];
+            session_start();
+            if($_POST['email'] === $_SESSION['user']){
+                header("Location: ../views/show.php?email=$email");
+                exit();   
+            }        
 
             try{
                 $result = $mysqli->query("UPDATE profiles SET email='$email' WHERE id=$id");

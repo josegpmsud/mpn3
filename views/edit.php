@@ -6,26 +6,29 @@
     <?php
         session_start();
         if(isset($_SESSION['user'])){
-            echo "<p>Usuario: ". $_SESSION['user'] . "</p><br><br>";
+            echo "<label>Usuario: ". $_SESSION['user'] . "</label>";
             echo "<a href='../handle_db/closesession.php'>Close Session</a>";
         }else{
             header("Location: /index.php");
         }
-        
+
         $id = $_GET["id"];
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
         $stmnt = $mysqli->query("SELECT * FROM profiles WHERE id=$id");
         $result = $stmnt->fetch_assoc();
 
+        
     ?>
-
+    <br>
+    <br>
+    <a href="../views/show.php?email=<?php echo $_SESSION['user'];?>"> Back </a>
     <form action="../handle_db/update.php" method="post" enctype="multipart/form-data">
 
         <input type="text" hidden name="id" value="<?php echo $result['id']?>">
 
         <label for="photo">Photo:</label>
         <input id="photo" type="file" name="photo" value="">
-        
+
         <br>
 
         <label for="nam">Name:</label>
@@ -44,7 +47,7 @@
         <br>
 
         <label for="email">Email:</label>
-        <label><?php            
+        <label><?php
             if(isset($_SESSION['mess'])) {echo $_SESSION['mess'];}
         ?></label>
         <input id="email" type="email" name="email" value="<?php echo $result['email']?>">

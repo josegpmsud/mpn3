@@ -5,7 +5,7 @@
     <?php
         session_start();
         if(isset($_SESSION['user'])){
-            echo "<p>Usuario: ". $_SESSION['user'] . "</p><br><br>";
+            echo "<label>Usuario: ". $_SESSION['user'] . "</label>";
             echo "<a href='../handle_db/closesession.php'>Close Session</a>";
         }else{
             header("Location: /index.php");

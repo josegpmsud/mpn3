@@ -4,7 +4,7 @@ try {
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "login_db";//login_db//funvalp
+    $database = "login_db";
 
     $mysqli = new mysqli($host, $username, $password, $database);
 

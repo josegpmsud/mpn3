@@ -6,6 +6,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     
     require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
     
+    try{
+        
     $stmnt = $mysqli->query("SELECT * FROM profiles WHERE email='$email'");
 
     if($stmnt->num_rows === 1){
@@ -22,6 +24,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             header("Location: ../views/login.php");
         }
     }
+
+    }catch(mysqli_sql_exception $e){
+        echo "Error" . $e->getMessage();
+        //header("Location: ../views/login.php");        
+    }
+
+
+    
 
 }else{
     echo "No estas usando POST para acceder a este archivo";

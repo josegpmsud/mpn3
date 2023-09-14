@@ -12,7 +12,6 @@
             header("Location: /index.php");
         }
         
-
         $id = $_GET["id"];
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
         $stmnt = $mysqli->query("SELECT * FROM profiles WHERE id=$id");
@@ -25,7 +24,7 @@
         <input type="text" hidden name="id" value="<?php echo $result['id']?>">
 
         <label for="photo">Photo:</label>
-        <input id="photo" type="file" name="photo" value="<?php // echo $result['photo']?>">
+        <input id="photo" type="file" name="photo" value="">
         
         <br>
 
@@ -45,12 +44,15 @@
         <br>
 
         <label for="email">Email:</label>
+        <label><?php            
+            if(isset($_SESSION['mess'])) {echo $_SESSION['mess'];}
+        ?></label>
         <input id="email" type="email" name="email" value="<?php echo $result['email']?>">
 
         <br>
 
         <label for="pass">Password:</label>
-        <input id="pass" type="password" name="pass" value="<?php echo $result['pass']?>">
+        <input id="pass" type="password" name="pass" value="">
 
         <br>
 
@@ -61,7 +63,6 @@
 
 </body>
 </html>
-
 
 <?php
 

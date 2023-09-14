@@ -14,9 +14,9 @@
                             <input type="email" placeholder="Email" name="email">
                             <?php
                                 session_start();
-                                if(isset($_SESSION['duplicado'])){
-                                    echo $_SESSION['duplicado'];
-                                    unset($_SESSION['duplicado']);
+                                if(isset($_SESSION['mess'])){
+                                    echo $_SESSION['mess'];
+                                    unset($_SESSION['mess']);
                                 }
 
                             ?>

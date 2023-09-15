@@ -6,6 +6,7 @@
 -error al cargar una img y al editarla
 -mejor ccs similar al figma
 -el correo electronico se podria editar???
+-validar cuando las imagenes superan la capacidad tamaño
 
 # opcionales
 

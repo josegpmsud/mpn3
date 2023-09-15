@@ -23,11 +23,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;/*mientras por mejorar dieño*/
+    gap: 1.5rem;/*mientras por mejorar dieño*/
+}
+.text1{
+    color: #333333;
+}
+.text2{
+    color: #828282;
 }
 
 .link{
+    width: 100%;
     display: flex;
+    justify-content: space-around;
 }
 
 .cont-logo{
@@ -46,18 +54,27 @@
     /*padding: .5rem;*/
     margin: .05rem 0rem;
     height: 48px;
+    margin-bottom: 1rem;
     
 }
 
+.mess{
+    color: red;
+    font-size: 15px;
+}
+
 .input-dig{
-    width: 90%;
+    width: 85%;
     height: 100%;
     border-style: none;
-    
+    margin-left: 0.5rem;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .material-symbols-outlined{
     margin-left: 0.5rem;
+    color: #828282;
 }
 
 .button{
@@ -67,6 +84,8 @@
     height: 100%;
     border: none;
     border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 form{
@@ -74,13 +93,28 @@ form{
     
 }
 
-
-/*
-.cont-input{
-    width: 100%;
-    align-items: start;
-    border-style: solid;
-    border-color: black;
+.cont-link{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
 }
 
-*/
+.lb:hover{
+    cursor: pointer;
+    
+
+}
+
+button:hover {
+    cursor: pointer;
+    border-style: solid;
+    
+
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,15 +1,16 @@
 <?php require_once("./section/head.php") ?>
 <body>
     <main class="main">
+        <div>
         <section class="cont-login">
             <div class="cont-logo">
                 <img src="./assets/devchallenges.svg" alt="logo">
             </div>
             
-            <h1>Join thousands of learners from around the world</h1>
+            <h1 class="text1">Join thousands of learners from around the world</h1>
             
-            <p>Master web development by making real-life projects. There are multiple paths for you to choose<br> 
-            <em>
+            <p class="text1">Master web development by making real-life projects. There are multiple paths for you to choose<br> 
+            <em class="mess">
             <?php
                 session_start();
                 if(isset($_SESSION['duplicado'])){
@@ -25,7 +26,7 @@
             <div class="input">
                 <span class="material-symbols-outlined"> mail </span>
 
-                <input class="input-dig" type="email" placeholder="Email" name="email">
+                <input class="input-dig" type="email" placeholder="Email" name="email" autofocus value="">
                     
             </div>                    
                     
@@ -42,21 +43,25 @@
                
 
 
-            <div>
-                <p>or continue with these social profile</p>
+            <div class="cont-link">
+                <p class="text2">or continue with these social profile</p>
                 <section class="link">
-                    <div><img src="./assets/Google.svg" alt="Google"></div>
-                    <div><img src="./assets/Facebook.svg" alt="Facebook"></div>
-                    <div><img src="./assets/Twitter.svg" alt="Twitter"></div>
-                    <div><img src="./assets/Gihub.svg" alt="Gihub"></div>
+                    <div class="lb"><img src="./assets/Google.svg" alt="Google"></div>
+                    <div class="lb"><img src="./assets/Facebook.svg" alt="Facebook"></div>
+                    <div class="lb"><img src="./assets/Twitter.svg" alt="Twitter"></div>
+                    <div class="lb"><img src="./assets/Gihub.svg" alt="Gihub"></div>
                 </section>
-                <p>Adready a member?  <a href="./views/login.php">Login</a></p>
+                <p class="text2">Ad ready a member?  <a href="./views/login.php">Login</a></p>
             </div>
+            
             
 
         </section>
-
+        <?php
+                require_once("./section/footer.php");
+        ?>  
+     </div>  
     </main>
-
+                 
 </body>
 </html>

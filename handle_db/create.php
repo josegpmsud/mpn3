@@ -4,6 +4,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $email = $_POST["email"];
     $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
+    //var_dump($email);
+    //exit();
+
+    if($email === ""){//no esta funcionando este condicional revisar porque???
+        header("Location: ../views/login.php");
+    }
+
     require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
 
     try{

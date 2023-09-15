@@ -1,27 +1,21 @@
 <?php require_once("../section/head.php") ?>
 
 <body>
+    <?php require_once("../section/nav.php") ?>
     
     <?php
-        session_start();
-        if(isset($_SESSION['user'])){
-            echo "<label>Usuario: ". $_SESSION['user'] . "</label>";
-            echo "<a href='../handle_db/closesession.php'>Close Session</a>";
-        }else{
-            header("Location: /index.php");
-        }
-
         $email = $_GET["email"];
         require_once($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
         $stmnt = $mysqli->query("SELECT * FROM profiles WHERE email='$email'");
         $result = $stmnt->fetch_assoc();
-
     ?>
 
-    <table>
+    <section class="p-show">
+    <table class="table-show">
         <thead>
             <tr>
-                
+            <h1>Personal info</h1>
+            <p>Basic info, like your name and photo</p>
             </tr>
         </thead>
         <tbody>
@@ -34,7 +28,10 @@
                     $id = $row["id"];
                     $photo = $row["photo"];
                     $nam = $row["nam"];
-                    $bio = $row["bio"];
+
+                    strlen($row["bio"])>70 ? $pun = "...": $pun = "";
+                    
+                    $bio = substr($row["bio"], 0, 70) . $pun;
                     $phone = $row["phone"];
                     $email  = $row["email"];
                     $pass = $row["pass"];
@@ -42,48 +39,53 @@
                     
                 if(isset($row['photo'])){
                     $dataImg = base64_encode($row['photo']);
-                    $image= "<img src='data:img/jpg;base64,$dataImg' height='100'/>";
+                    $image= "<img class ='image-perfil' src='data:img/jpg;base64,$dataImg' height='100'/>";
                 }else{
-                    $image = "No tienes imagen";
+                    $image = "<img class='image-perfil' src='../assets/sinPerfil.jpg' alt=''>";
                 }
-
+                
 
                     echo "
-                    <tr>
-                    <td>
-                        <h1>Profile</h1>
-                        <p>Some info may be visible to other people</p>
+                    <tr  class='row'>
+                    <td colspan='3'>
+                        <div>
+                            <h1>Profile</h1>
+                            <span>Some info may be visible to other people</span>
+                        </div>
+                        <div>
                         <a href='/views/edit.php?id=$id' >Editar</a>
+                        </div>
+                        
                     </td>
+                    
+                                        
                     </tr>
-                    <tr>
+                    <tr class='row'>
                         <td>PHOTO</td>
                         <td>$image</td>
                     </tr>
-                    <tr>                        
+                    <tr class='row'>                        
                         <td>NAME</td>
                         <td>$nam</td>
                     </tr>
-                    <tr>                       
+                    <tr class='row'>                       
                         <td>BIO</td>
                         <td>$bio</td>
                     </tr>
-                    <tr>
+                    <tr class='row'>
                         <td>PHONE</td>
                         <td>$phone</td>
                     </tr>
-                    <tr>                        
+                    <tr class='row'>                        
                         <td>EMAIL</td>
                         <td>$email</td>
                     </tr>
-                    <tr>
+                    <tr class='row'>
                         
                         <td>PASSWORD</td>
                         <td>***********</td>                        
                     </tr>
                    
-
-
                     ";
                 }
 
@@ -92,6 +94,9 @@
 
 
     </table>
-
+    <?php
+        require_once("../section/footer.php");
+    ?>  
+    </section>
 </body>
 </html>

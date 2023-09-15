@@ -1,5 +1,6 @@
 # funcionalidades
 
+-validar que no guarde correos en blanco
 -corregir cuando los campos se actualizan no me cierre si no se a actualizado el correo
 -controlar error cuando no existe el perfil y se intenta entrar
 -como guardar y mostar fotografia
@@ -7,6 +8,7 @@
 -mejor ccs similar al figma
 -el correo electronico se podria editar???
 -validar cuando las imagenes superan la capacidad tamaño
+-validar numero de caracters a mostrar en input bio en views show
 
 # opcionales
 

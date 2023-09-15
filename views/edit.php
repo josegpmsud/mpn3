@@ -17,6 +17,14 @@
         $stmnt = $mysqli->query("SELECT * FROM profiles WHERE id=$id");
         $result = $stmnt->fetch_assoc();
 
+
+        if(isset($result['photo'])){
+            $dataImg = base64_encode($result['photo']);
+            $image= "<img src='data:img/jpg;base64,$dataImg' height='100'/>";
+        }else{
+            $image = "No tienes imagen";
+        }
+
         
     ?>
     <br>
@@ -25,7 +33,7 @@
     <form action="../handle_db/update.php" method="post" enctype="multipart/form-data">
 
         <input type="text" hidden name="id" value="<?php echo $result['id']?>">
-
+        <?php echo $image?>
         <label for="photo">Photo:</label>
         <input id="photo" type="file" name="photo" value="">
 

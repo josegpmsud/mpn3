@@ -142,7 +142,9 @@ button:hover {
 }
 
 .img-session{
-    height: 50px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
 }
 
 /* views show */
@@ -265,4 +267,38 @@ td{
 .change-photo-label{
     position: relative;
     bottom: 25px;
+}
+
+.mess{
+    position: relative;
+    bottom: -20px;
+}
+
+.btn-edit{
+    position: relative;
+    right: -600px;
+    bottom: 25px;
+
+    font-size: 16px;
+    color: #828282;;
+    width: 95.34px; 
+    height: 38px; 
+    padding: .5rem;
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 1px; 
+    border-color: #828282;
+}
+
+.logeo{
+    
+    position:relative;
+    width: 188px; 
+    height: 174px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E0E0E0;
+    border-radius: 12px;
+
+
 }

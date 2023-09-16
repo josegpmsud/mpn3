@@ -37,7 +37,7 @@
         <input type="text" hidden name="id" value="<?php echo $result['id']?>">
         
         
-        <label class="label-edit" class="button-photo" for="photo"><?php echo $image?><span class="material-symbols-outlined photo-icon"> photo_camera </span> <span class="change-photo-label">Change Photo</span></label>
+        <label class="label-edit" class="button-photo" for="photo"><?php echo $image?><span class="material-symbols-outlined photo-icon"> photo_camera </span> <span class="change-photo-label">CHANGE PHOTO</span></label>
         <input hidden id="photo" type="file" name="photo" value="">
 
         <br> <br>

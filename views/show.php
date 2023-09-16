@@ -53,7 +53,7 @@
                             <span>Some info may be visible to other people</span>
                         </div>
                         <div>
-                        <a href='/views/edit.php?id=$id' >Editar</a>
+                        <a class='btn-edit' href='/views/edit.php?id=$id' >Edit</a>
                         </div>
                         
                     </td>

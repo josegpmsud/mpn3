@@ -4,20 +4,34 @@
         <section>
         <div>
             <img class="img-session" src="../assets/sinPerfil.jpg" alt="">
-        </div>
-        <div>
-        <?php
-        session_start();
-        if(isset($_SESSION['user'])){
-            
-            
+            <?php
+            session_start();
+            if(isset($_SESSION['user'])){
 
-            echo "<label>Usuario: ". $_SESSION['user'] . "</label>";
-            echo "<a href='../handle_db/closesession.php'>Close Session</a>";
-        }else{
-            header("Location: /index.php");
-        }
-        ?>
+                echo "<span>". $_SESSION['user'] . "</span>";
+                echo "<span class='material-symbols-outlined'> arrow_drop_up </span>";
+                echo "<span class='material-symbols-outlined'> arrow_drop_down </span>";
+                
+            }else{
+                header("Location: /index.php");
+            }
+            ?>
+
+        </div>
+        <div class="logeo">
+            <section>
+            <div>
+                <a href=""><span class="material-symbols-outlined"> account_circle </span>My Profile</a>
+            </div>
+            <div>
+                <a href="#"><span class="material-symbols-outlined"> group </span>Group Chat</a>
+            </div>
+            <div>
+                <?php
+                    echo "<a href='../handle_db/closesession.php'><span class='material-symbols-outlined'> exit_to_app</span>Logout</a>";
+                ?>
+            </div>
+            </section>
         </div>
         </section>
     

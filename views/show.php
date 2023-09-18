@@ -40,11 +40,14 @@
                 if(isset($row['photo'])){
                     $dataImg = base64_encode($row['photo']);
                     $image= "<img class ='image-perfil' src='data:img/jpg;base64,$dataImg' height='100'/>";
+                    
+                    $_SESSION['img'] = "<img class ='img-session' src='data:img/jpg;base64,$dataImg' height='100'/>";
+                    
+
                 }else{
                     $image = "<img class='image-perfil' src='../assets/sinPerfil.jpg' alt=''>";
                 }
                 
-
                     echo "
                     <tr  class='row'>
                     <td colspan='3'>
@@ -100,3 +103,12 @@
     </section>
 </body>
 </html>
+<!-- 
+<script>
+    var cont = 0;
+    if(cont < 1){
+        location.reload();
+        cont++;
+    }
+    
+</script> -->

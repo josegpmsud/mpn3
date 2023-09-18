@@ -299,6 +299,32 @@ td{
     border-width: 1px;
     border-color: #E0E0E0;
     border-radius: 12px;
-
-
 }
+
+.cont-link-logout{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.enl{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 8px;
+    padding: .2rem 0rem;
+    color: #4F4F4F;    
+}
+
+.enl:hover{
+    background-color: #F2F2F2;
+}
+
+.enl-logout{
+    color: #EB5757;
+}
+
+.hr-logout{
+    color: #E0E0E0;    
+}   

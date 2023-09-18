@@ -1,5 +1,7 @@
 # funcionalidades
 
+-porque base de datos no esta guardando la secuencia de id correcta?
+-validar cuando no encuentra conexion a la base de datos
 -validar que no guarde correos en blanco
 -corregir cuando los campos se actualizan no me cierre si no se a actualizado el correo
 -controlar error cuando no existe el perfil y se intenta entrar
@@ -9,6 +11,8 @@
 -el correo electronico se podria editar???
 -validar cuando las imagenes superan la capacidad tamaño
 -validar numero de caracters a mostrar en input bio en views show
+-boton back alinear a la derecha
+-lineas de vista show
 
 # opcionales
 

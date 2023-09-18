@@ -20,7 +20,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             session_start();
             $_SESSION['user'] = $email;
             $_SESSION['pass'] = $pass;
-            header("Location: ../views/show.php?email=$email");//$id
+            header("Location: ../views/show.php?email=$email");
+            
         }else{
             "Error al guardar el perfil";
         }

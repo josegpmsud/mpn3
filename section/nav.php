@@ -3,9 +3,18 @@
         <img src="../assets/devchallenges.svg" alt="logo">
         <section>
         <div>
-            <img class="img-session" src="../assets/sinPerfil.jpg" alt="">
             <?php
-            session_start();
+                session_start();
+                if(isset($_SESSION['img'])){
+                    echo $_SESSION['img'];
+                }else{
+                   echo "<img class='img-session' src='../assets/sinPerfil.jpg' alt=''>";
+                }
+            ?>
+            
+            
+            <?php
+            
             if(isset($_SESSION['user'])){
 
                 echo "<span>". $_SESSION['user'] . "</span>";
@@ -19,16 +28,17 @@
 
         </div>
         <div class="logeo">
-            <section>
-            <div>
-                <a href=""><span class="material-symbols-outlined"> account_circle </span>My Profile</a>
+            <section class="cont-link-logout">
+            <div >
+                <a class="enl" href=""><span class="material-symbols-outlined"> account_circle </span>My Profile</a>
             </div>
-            <div>
-                <a href="#"><span class="material-symbols-outlined"> group </span>Group Chat</a>
+            <div >
+                <a class="enl" href="#"><span class="material-symbols-outlined"> group </span>Group Chat</a>
             </div>
-            <div>
+            <hr class="hr-logout">
+            <div >
                 <?php
-                    echo "<a href='../handle_db/closesession.php'><span class='material-symbols-outlined'> exit_to_app</span>Logout</a>";
+                    echo "<a class='enl enl-logout' href='../handle_db/closesession.php'><span class='material-symbols-outlined enl-logout'> exit_to_app</span>Logout</a>";
                 ?>
             </div>
             </section>

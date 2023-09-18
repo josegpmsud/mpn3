@@ -29,6 +29,9 @@
                     $photo = $row["photo"];
                     $nam = $row["nam"];
 
+                    isset($row['nam']) && $_SESSION['nam'] = $row["nam"];
+                    
+
                     strlen($row["bio"])>70 ? $pun = "...": $pun = "";
                     
                     $bio = substr($row["bio"], 0, 70) . $pun;

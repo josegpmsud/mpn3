@@ -38,7 +38,9 @@
             
             if(isset($_SESSION['user'])){
 
-                echo "<span>". $_SESSION['user'] . "</span>";
+                 if(isset($_SESSION['nam'])){echo "<span>". substr($_SESSION["nam"], 0, 15) . "</span>"; } else {echo "<span>". $_SESSION['user'] . "</span>";;}
+
+                
                 echo "<span id='more' class='material-symbols-outlined'> arrow_drop_up </span>";
                 echo "<span id='mere' class='material-symbols-outlined'> arrow_drop_down </span>";
                 
@@ -51,6 +53,7 @@
         <div class="logeo" id="nav-option">
             <section class="cont-link-logout">
             <div >
+                
                 <a class="enl" href="../views/show.php?email=<?php echo $_SESSION['user'];?>"><span class="material-symbols-outlined"> account_circle </span>My Profile</a>
             </div>
             <div >

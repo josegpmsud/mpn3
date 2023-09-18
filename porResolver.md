@@ -12,6 +12,7 @@
 -boton back alinear a la derecha
 -lineas de vista show
 
+
 -si ya tiene nombre actualizado mortrarlo en la barra de session
 
 
@@ -21,3 +22,6 @@
 -diseño responsive
 -utilizar bootstrap 5
 
+# revisiones luego de la entrega
+
+-que no permita guardar html para no dañar el sistema

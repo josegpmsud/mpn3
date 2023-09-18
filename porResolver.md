@@ -1,7 +1,7 @@
 # funcionalidades
 
 -porque base de datos no esta guardando la secuencia de id correcta?
--cada initento fallido en el inicio de secion me incrementa id 
+-cada initento fallido en el inicio de sesion me incrementa id 
 -validar cuando no encuentra conexion a la base de datos
 -validar que no guarde correos en blanco
 -cambiar cuando los campos se actualizan no me cierre si no se a actualizado el correo

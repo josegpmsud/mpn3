@@ -135,6 +135,7 @@ button:hover {
 }
 
 .nav-detail{
+   
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -154,6 +155,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    
 }
 
 .table-show{
@@ -290,15 +292,23 @@ td{
     border-color: #828282;
 }
 
+.btn-menu{
+    display: flex;
+    justify-content: center;
+}
+
 .logeo{
+    display: none;
+    position:absolute;
+    position: fixed;  
     
-    position:relative;
     width: 188px; 
     height: 174px;
     border-style: solid;
     border-width: 1px;
     border-color: #E0E0E0;
     border-radius: 12px;
+    
 }
 
 .cont-link-logout{
@@ -327,4 +337,13 @@ td{
 
 .hr-logout{
     color: #E0E0E0;    
-}   
+}
+
+.btn-menu:hover{
+    cursor: pointer;
+}
+
+
+#more{
+    display: none;
+}

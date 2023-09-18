@@ -1,8 +1,29 @@
 <nav class="nav-detail">
     
         <img src="../assets/devchallenges.svg" alt="logo">
+        
+    <script>
+         function show() {
+        let x = document.getElementById("nav-option");
+        let y = document.getElementById("more");
+        let z = document.getElementById("mere");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "inline";
+        z.style.display = "none";
+        } else {
+        x.style.display = "none";
+        y.style.display = "none";
+        z.style.display = "inline";
+        }
+        }
+
+    </script>
+       
+
+               
         <section>
-        <div>
+        <div onclick="show()" class="btn-menu">
             <?php
                 session_start();
                 if(isset($_SESSION['img'])){
@@ -18,8 +39,8 @@
             if(isset($_SESSION['user'])){
 
                 echo "<span>". $_SESSION['user'] . "</span>";
-                echo "<span class='material-symbols-outlined'> arrow_drop_up </span>";
-                echo "<span class='material-symbols-outlined'> arrow_drop_down </span>";
+                echo "<span id='more' class='material-symbols-outlined'> arrow_drop_up </span>";
+                echo "<span id='mere' class='material-symbols-outlined'> arrow_drop_down </span>";
                 
             }else{
                 header("Location: /index.php");
@@ -27,10 +48,10 @@
             ?>
 
         </div>
-        <div class="logeo">
+        <div class="logeo" id="nav-option">
             <section class="cont-link-logout">
             <div >
-                <a class="enl" href=""><span class="material-symbols-outlined"> account_circle </span>My Profile</a>
+                <a class="enl" href="../views/show.php?email=<?php echo $_SESSION['user'];?>"><span class="material-symbols-outlined"> account_circle </span>My Profile</a>
             </div>
             <div >
                 <a class="enl" href="#"><span class="material-symbols-outlined"> group </span>Group Chat</a>

@@ -46,7 +46,7 @@
                     session_start();
                     $_SESSION['mess'] = "Debes ingresar nuevamente haz actualizado tu email";
 
-                    header("Location: ../views/login.php");//header("Location: ../views/show.php?email=$email");
+                    header("Location: ../views/login.php");
 
 
                 }else{

@@ -26,7 +26,7 @@
     <br>
     <section class="p-show">
     
-    <a class="back" href="../views/show.php?email=<?php echo $_SESSION['user'];?>"><span class="material-symbols-outlined back"> arrow_back_ios </span> Back </a>
+        <a class="back" href="../views/show.php?email=<?php echo $_SESSION['user'];?>"><span class="material-symbols-outlined back"> arrow_back_ios </span> Back </a>
 
     <section class="cont-edit">
     <form action="../handle_db/update.php" method="post" enctype="multipart/form-data">
